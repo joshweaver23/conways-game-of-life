@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Conway's Game of Life v2</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <html ng-app="golApp">
+<head>
+<script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
+<meta charset=utf-8 />
+<title>Conway's Game of Life</title>
+</head>
+
+<body>
+  <div ng-controller="golCtrl" class="container text-center" id="wrapper">
+
+  <h1>Conway's Game of Life</h1>
+  <div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-3">
+      <div class="inputs pull-right">Height: <input type="text" ng-model="height"/></div>      
+      <div class="inputs pull-right">Width: <input type="text" ng-model="width"/></div>
+    </div>
+    <div class="col-xs-3">
+      <button ng-click="createBoard()" class="btn pull-left">Change Board Size</button>
+    </div>
+    <div class="col-xs-3"></div>
+  </div>
+  <button ng-click="start()"
+          ng-model="running"
+          class="btn start"
+          data-toggle="button">Start/Stop Game</button>
+
+  <table id="board">
+    <tr ng-repeat="row in board">
+      <td ng-repeat="cell in row track by $index"
+          ng-click="toggle($parent.$index, $index)"
+          class="{{cellClass($parent.$index, $index)}}"></td>
+    </tr>
+  </table>
+
+  </div>
+</body>
+</html>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>
